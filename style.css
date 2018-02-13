@@ -38,12 +38,12 @@ form {
     rgba(241, 237, 237, 0.7)
   );
   display: inline-block;
-  position: relative;
-  top: 180px;
-  left: 600px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
   text-align: center;
   height: 500px;
-  width: 700px;
+  width: 800px;
   padding: 20px;
   font-size: 1.5rem;
   border-radius: 10px;
