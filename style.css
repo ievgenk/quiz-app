@@ -16,6 +16,9 @@ main {
   background-image: url(img/bg.jpg);
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #logo {
   height: 100px;
@@ -37,23 +40,24 @@ form {
     rgba(241, 237, 237, 0.7),
     rgba(241, 237, 237, 0.7)
   );
-  display: inline-block;
-  position: absolute;
+  /* display: inline-block; */
+  /* position: absolute;
   top: 20%;
-  left: 30%;
+  left: 30%; */
   text-align: center;
-  height: 500px;
+  min-height: 50vh;
   width: 800px;
-  padding: 20px;
+  /* padding: 20px;  */
   font-size: 1.5rem;
   border-radius: 10px;
+  margin: 20px 20px;
 }
 form label,
 input {
   display: block;
 }
 form label:last-of-type {
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 form input,
 label {
@@ -62,7 +66,7 @@ label {
 form input {
   margin-right: 10px;
 }
-.questions {
+/* .questions {
   position: relative;
   top: 100px;
-}
+} */
