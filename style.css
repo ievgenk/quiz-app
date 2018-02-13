@@ -82,8 +82,11 @@ footer i {
   padding: 0 20px;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 501px) {
   .cell-btn {
+    display: none;
+  }
+  .cell-phone-score {
     display: none;
   }
 }
@@ -94,8 +97,20 @@ footer i {
     height: auto;
     justify-content: center;
   }
-  nav .score {
-    flex-basis: 100%;
+  #score {
+    display: none;
+  }
+  .cell-phone-score {
+    color: black;
+    position: relative;
+    top: 8%;
+    background: rgba(255, 255, 255, 0.705);
+    padding: 0px 10px;
+    border-radius: 7px;
+  }
+  .cell-phone-score li {
+    list-style: none;
+    font-size: 1.5rem;
   }
   .questions button {
     display: none;
