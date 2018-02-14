@@ -93,7 +93,7 @@ footer i {
 }
 
 @media only screen and (min-width: 501px) {
-  .cell-btn {
+  .cell-btns {
     display: none;
   }
   .cell-phone-score {

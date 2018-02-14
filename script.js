@@ -84,26 +84,38 @@ function incrementWrongAnswers() {
 
 function templateQuestion() {
   return `<section class="questions">
-  <h2 class="question">${dataSet[(questionNumber - 1)].question}</h3>
+  <h2 class="question">${dataSet[questionNumber - 1].question}</h3>
     <label for="a1">
       <input type="radio" name="answer-1" id="a1">${
-        dataSet[(questionNumber - 1)].answers[0]
+        dataSet[questionNumber - 1].answers[0]
       }</label>
     <label for="a2">
       <input type="radio" name="answer-1" id="a2">${
-        dataSet[(questionNumber - 1)].answers[1]
+        dataSet[questionNumber - 1].answers[1]
       }</label>
     <label for="a3">
       <input type="radio" name="answer-1" id="a3">${
-        dataSet[(questionNumber - 1)].answers[2]
+        dataSet[questionNumber - 1].answers[2]
       }</label>
     <label for="a4">
       <input type="radio" name="answer-1" id="a4">${
-        dataSet[(questionNumber - 1)].answers[3]
+        dataSet[questionNumber - 1].answers[3]
       }</label>
-    <button class="btn">Start Over</button>
+    <button class="startOverBtn">Start Over</button>
     <button class="nextQuestionBtn">Next Question</button>
 </section>`;
+}
+
+function templateCorrectAnswer() {
+  return `<h2>Great work, this is a correct answer!</h2><br/>
+  <button class="nextQuestionBtn">Next Question</button>
+  `;
+}
+function templateWrongAnswer() {
+  return `<h2>Unfortunately that is not correct answer. The right answer is ${
+    dataSet[questionNumber - 1].correct
+  }</h2><br/>
+  <button class="nextQuestionBtn">Next Question</button>`;
 }
 
 function disableFormSubmission() {
@@ -118,14 +130,47 @@ function startQuiz() {
     $("#form").html(templateQuestion);
   });
 }
+
+function nextQuestion() {
+  $(".nextQuestionBtn").on("click", function(event) {
+    $("#form").html(templateQuestion);
+  });
+}
+function startOver() {
+  $("#form").on("click", ".startOverBtn", function(event) {
+    questionNumber = 0;
+    $(".questionNum").html(`${questionNumber}/10`);
+    wrongAnswers = 0;
+    $(".wrongAnswers").html(`: ${wrongAnswers}`);
+    rightAnswers = 0;
+    $(".rightAnswers").html(`: ${rightAnswers}`);
+    $("#form").html(`<section class="intro">
+    <h1>How Well Do You Know
+      <br/>World History?</h1>
+    <h2>Find out by taking this quiz.</h2>
+    <button id="startQuiz">Begin</button>
+  </section>
+`);
+    startQuiz();
+  });
+}
+
 function evaluateAnswer() {
   $("#form").on("click", ".nextQuestionBtn", function(event) {
     let inputAnswer = $("input[type=radio]:checked")
       .parent()
       .text()
       .trim();
-    if (inputAnswer === dataSet[questionNumber-1].correct) {
-      console.log(`hooray!`);
+    if (inputAnswer === dataSet[questionNumber - 1].correct) {
+      incrementRightAnswers();
+      $("#form").html(templateCorrectAnswer);
+      incrementQuestionNumber();
+      nextQuestion();
+    } else {
+      incrementWrongAnswers();
+      $("#form").html(templateWrongAnswer);
+      incrementQuestionNumber();
+      nextQuestion();
     }
   });
 }
@@ -134,4 +179,6 @@ $(function() {
   disableFormSubmission();
   startQuiz();
   evaluateAnswer();
+  startOver();
+  nextQuestion();
 });
