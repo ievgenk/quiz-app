@@ -2,7 +2,7 @@
 
 const dataSet = [
   {
-    question: `In which year did Alexander the Great become the king of Macedonia?`,
+    question: `In what year did Alexander the Great become the king of Macedonia?`,
     answers: [`336BC`, `323BC`, `350BC`, `200BC`],
     correct: `336BC`
   },
@@ -17,7 +17,7 @@ const dataSet = [
     correct: `1815`
   },
   {
-    question: `In which year America became independent?`,
+    question: `In what year America became independent?`,
     answers: [`1760`, `1776`, `1780`, `1782`],
     correct: `1776`
   },
@@ -32,14 +32,9 @@ const dataSet = [
     correct: `Leonardo da Vinci`
   },
   {
-    question: `The Hundred Years’ War was fought between`,
-    answers: [
-      `England and France`,
-      `Germany and Russia`,
-      `America and Argentina`,
-      `England and Germany`
-    ],
-    correct: `England and France`
+    question: `In what year did Arab Spring start?`,
+    answers: [`1987`, `2015`, `2011`, `1999`],
+    correct: `2011`
   },
   {
     question: `When did the second Russian revolution start?`,
@@ -83,10 +78,10 @@ function incrementWrongAnswers() {
 }
 
 function templateQuestion() {
-  return `<section class="questions">
+  return `<section class="questions" aria-label="quiz question">
   <h2 class="question">${dataSet[questionNumber - 1].question}</h3>
     <label for="a1">
-      <input type="radio" name="answer-1" id="a1">${
+      <input type="radio" name="answer-1" id="a1" required>${
         dataSet[questionNumber - 1].answers[0]
       }</label>
     <label for="a2">
@@ -103,27 +98,27 @@ function templateQuestion() {
       }</label>
 
       <section class="desktop-btns">
-        <button class="startOverBtn">Start Over</button>
-        <button class="nextQuestionBtn">Next Question</button>
+        <button class="btn startOverBtn">Start Over</button>
+        <button class="btn nextQuestionBtn" type="submit">Next Question</button>
       </section>
 
     <section class="cell-btns">
-      <button class="startOverBtn">Start Over</button>
-      <button class="nextQuestionBtn">Next Question</button>
+      <button class="btn startOverBtn">Start Over</button>
+      <button class="btn nextQuestionBtn">Next Question</button>
   </section>
 </section>`;
 }
 
 function templateCorrectAnswer() {
-  return `<h2>Great work, this is a correct answer!</h2><br/>
-  <button class="nextQuestionBtn">Next Question</button>
+  return `<h2>Great work, this is a <span class="corAnswer">correct answer!</span></h2><br/>
+  <button class="btn nextQuestionBtn">Next Question</button>
   `;
 }
 function templateWrongAnswer() {
-  return `<h2>Unfortunately that is not correct answer. The right answer is ${
+  return `<h2>Unfortunately that is <span class="wrAnswer">not correct answer</span>.<br /> The right answer is <span class="corAnswer">${
     dataSet[questionNumber - 1].correct
-  }</h2><br/>
-  <button class="nextQuestionBtn">Next Question</button>`;
+  }</span></h2><br/>
+  <button class="btn nextQuestionBtn">Next Question</button>`;
 }
 
 function disableFormSubmission() {
@@ -156,7 +151,7 @@ function startOver() {
     <h1>How Well Do You Know
       <br/>World History?</h1>
     <h2>Find out by taking this quiz.</h2>
-    <button id="startQuiz">Begin</button>
+    <button id="startQuiz" class="btn">Begin</button>
   </section>
 `);
     startQuiz();
@@ -166,8 +161,8 @@ function startOver() {
 function finalResultsDisplay() {
   if (dataSet.length + 1 === questionNumber) {
     $("#form").html(
-      `<h2>Thanks for taking this quiz!</h2><h3>You answered ${rightAnswers} questions correctly and ${wrongAnswers} incorrectly</h3>
-      <button class="startOverBtn">Start Over</button>`
+      `<h2>Thanks for taking this quiz!</h2><h3>You answered <span class="corAnswer">${rightAnswers} questions correctly</span> and <br /><span class="wrAnswer">${wrongAnswers} incorrectly</span></h3>
+      <button class="btn startOverBtn">Start Over</button>`
     );
     questionNumber -= 1;
     $(".questionNum").html(`${questionNumber}/10`);

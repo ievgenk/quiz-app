@@ -1,3 +1,15 @@
+html {
+  font-size: 18px;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+
 nav {
   min-height: 20wh;
   background-color: darkgrey;
@@ -10,6 +22,7 @@ nav {
 }
 
 main {
+  padding-top: 100px;
   background-image: url("img/bg2.jpg");
   background-position: center;
   background-size: cover;
@@ -22,6 +35,25 @@ main {
   width: 100%;
   overflow-x: hidden;
 }
+.corAnswer {
+  background-color: #aacd6e;
+}
+.wrAnswer {
+  background-color: #b72436;
+}
+.btn {
+  background-color: rgba(0, 0, 0, 0.719);
+  /* border: 3px solid black; */
+  color: white;
+  padding: 5px 20px;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.btn:hover {
+  color: black;
+  background-color: rgba(170, 205, 110, 0.767);
+}
+
 #logo {
   height: 100px;
   width: 100px;
@@ -41,7 +73,7 @@ main {
   margin: 0 5px;
 }
 #score .fa-thumbs-up {
-  color: rgb(81, 192, 81);
+  color: #aacd6e;
 }
 #score .fa-thumbs-down {
   color: rgb(182, 28, 28);
@@ -59,12 +91,13 @@ form {
   );
 
   text-align: center;
-  min-height: 50vh;
+  min-height: 40vh;
   width: 800px;
   font-size: 1.5rem;
   border-radius: 10px;
-  margin: 100px 20px 0px 20px;
+  margin: 50px 20px 50px 20px;
 }
+
 form label,
 input {
   display: block;
@@ -75,6 +108,9 @@ form label:last-of-type {
 form input,
 label {
   display: inline-block;
+}
+h2.question {
+  padding: 0px 15px;
 }
 form input {
   margin-right: 10px;
@@ -91,16 +127,34 @@ footer i {
   padding: 0 20px;
 }
 
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 768px) {
   .cell-btns {
     display: none;
   }
   .cell-phone-score {
     display: none;
   }
+  .desktop-btns {
+    margin-top: 30px;
+  }
+  #startQuiz {
+    margin-top: 50px;
+  }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 551px) {
+  .cell-btns {
+    display: none;
+  }
+  .cell-phone-score {
+    display: none;
+  }
+  .desktop-btns {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
   nav {
     flex-wrap: wrap;
     height: auto;
@@ -112,7 +166,7 @@ footer i {
   .cell-phone-score {
     color: black;
     position: relative;
-    top: 8%;
+    top: 12%;
     background: rgba(255, 255, 255, 0.705);
     padding: 0px 10px;
     border-radius: 7px;
@@ -121,11 +175,20 @@ footer i {
     list-style: none;
     font-size: 1.5rem;
   }
+  .cell-btns {
+    margin-top: -20px;
+    padding-bottom: 20px;
+  }
   .desktop-btns {
     display: none;
   }
   main {
-    flex-direction: column;
+    padding-top: 100px;
+
+    /* flex-direction: column; */
+  }
+  form label:last-of-type {
+    padding-bottom: 20px;
   }
   form {
     max-width: 90vw;
