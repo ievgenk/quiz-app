@@ -71,7 +71,7 @@ let wrongAnswers = 0;
 
 function incrementQuestionNumber() {
   questionNumber++;
-  $(".questionNum").html(`${questionNumber}/10`);
+  $(".questionNum").html(`: ${questionNumber}/10`);
 }
 function incrementRightAnswers() {
   rightAnswers++;
@@ -101,8 +101,16 @@ function templateQuestion() {
       <input type="radio" name="answer-1" id="a4">${
         dataSet[questionNumber - 1].answers[3]
       }</label>
-    <button class="startOverBtn">Start Over</button>
-    <button class="nextQuestionBtn">Next Question</button>
+
+      <section class="desktop-btns">
+        <button class="startOverBtn">Start Over</button>
+        <button class="nextQuestionBtn">Next Question</button>
+      </section>
+
+    <section class="cell-btns">
+      <button class="startOverBtn">Start Over</button>
+      <button class="nextQuestionBtn">Next Question</button>
+  </section>
 </section>`;
 }
 
@@ -155,6 +163,17 @@ function startOver() {
   });
 }
 
+function finalResultsDisplay() {
+  if (dataSet.length + 1 === questionNumber) {
+    $("#form").html(
+      `<h2>Thanks for taking this quiz!</h2><h3>You answered ${rightAnswers} questions correctly and ${wrongAnswers} incorrectly</h3>
+      <button class="startOverBtn">Start Over</button>`
+    );
+    questionNumber -= 1;
+    $(".questionNum").html(`${questionNumber}/10`);
+  }
+}
+
 function evaluateAnswer() {
   $("#form").on("click", ".nextQuestionBtn", function(event) {
     let inputAnswer = $("input[type=radio]:checked")
@@ -172,6 +191,7 @@ function evaluateAnswer() {
       incrementQuestionNumber();
       nextQuestion();
     }
+    finalResultsDisplay();
   });
 }
 

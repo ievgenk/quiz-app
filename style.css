@@ -46,7 +46,9 @@ main {
 #score .fa-thumbs-down {
   color: rgb(182, 28, 28);
 }
-
+#form {
+  flex-direction: column;
+}
 form {
   display: flex;
   justify-content: center;
@@ -119,7 +121,7 @@ footer i {
     list-style: none;
     font-size: 1.5rem;
   }
-  .questions button {
+  .desktop-btns {
     display: none;
   }
   main {
