@@ -164,7 +164,7 @@ footer i {
     display: none;
   }
   #form {
-    margin-top: 25px;
+    margin-top: 100px;
   }
   #startQuiz {
     margin-bottom: 25px;
@@ -172,6 +172,10 @@ footer i {
 
   .nextQuestionBtn {
     margin-bottom: 25px;
+  }
+  h2,
+  h3 {
+    padding: 10px;
   }
 
   .cell-phone-score {
