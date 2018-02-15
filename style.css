@@ -166,6 +166,14 @@ footer i {
   #form {
     margin-top: 25px;
   }
+  #startQuiz {
+    margin-bottom: 25px;
+  }
+
+  .nextQuestionBtn {
+    margin-bottom: 25px;
+  }
+
   .cell-phone-score {
     color: black;
     position: relative;
