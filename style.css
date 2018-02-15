@@ -163,6 +163,9 @@ footer i {
   #score {
     display: none;
   }
+  #form {
+    margin-top: 25px;
+  }
   .cell-phone-score {
     color: black;
     position: relative;
