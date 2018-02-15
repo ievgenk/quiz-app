@@ -139,6 +139,15 @@ function nextQuestion() {
     $("#form").html(templateQuestion);
   });
 }
+
+function finalResultBtn() {
+  if (questionNumber === dataSet.length) {
+    console.log(`final btn`);
+    $(".nextQuestionBtn").on("click", function(event) {
+      $(".nextQuestionBtn").html(`Final Results`);
+    });
+  }
+}
 function startOver() {
   $("#form").on("click", ".startOverBtn", function(event) {
     questionNumber = 0;
@@ -186,6 +195,7 @@ function evaluateAnswer() {
       incrementQuestionNumber();
       nextQuestion();
     }
+    finalResultBtn();
     finalResultsDisplay();
   });
 }
@@ -196,4 +206,5 @@ $(function() {
   evaluateAnswer();
   startOver();
   nextQuestion();
+  finalResultBtn();
 });
