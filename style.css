@@ -180,6 +180,13 @@ footer i {
     margin-bottom: 25px;
     font-size: 18px;
   }
+  .btn {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 18px;
+  }
 
   .nextQuestionBtn {
     margin-bottom: 25px;
