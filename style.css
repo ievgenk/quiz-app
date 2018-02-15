@@ -155,6 +155,16 @@ footer i {
 }
 
 @media only screen and (max-width: 550px) {
+  .cell-phone-score ul li {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+
   nav {
     flex-wrap: wrap;
     height: auto;
@@ -168,6 +178,7 @@ footer i {
   }
   #startQuiz {
     margin-bottom: 25px;
+    font-size: 18px;
   }
 
   .nextQuestionBtn {
