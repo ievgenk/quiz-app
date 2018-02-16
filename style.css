@@ -142,7 +142,7 @@ footer i {
   }
 }
 
-@media only screen and (min-width: 551px) {
+@media only screen and (min-width: 651px) {
   .cell-btns {
     display: none;
   }
@@ -154,7 +154,7 @@ footer i {
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
   .cell-phone-score ul li {
     font-size: 18px;
   }
