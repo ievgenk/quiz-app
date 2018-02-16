@@ -115,7 +115,7 @@ function templateCorrectAnswer() {
   `;
 }
 function templateWrongAnswer() {
-  return `<h2>Unfortunately that is <span class="wrAnswer">not correct answer</span>.<br /> The right answer is <span class="corAnswer">${
+  return `<h2>Unfortunately that is <span class="wrAnswer">not the correct answer</span>.<br /> The right answer is <span class="corAnswer">${
     dataSet[questionNumber - 1].correct
   }</span></h2><br/>
   <button class="btn nextQuestionBtn">Next Question</button>`;
@@ -184,6 +184,7 @@ function evaluateAnswer() {
       .parent()
       .text()
       .trim();
+
     if (inputAnswer === dataSet[questionNumber - 1].correct) {
       incrementRightAnswers();
       $("#form").html(templateCorrectAnswer);
@@ -195,6 +196,7 @@ function evaluateAnswer() {
       incrementQuestionNumber();
       nextQuestion();
     }
+
     finalResultBtn();
     finalResultsDisplay();
   });
