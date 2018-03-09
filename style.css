@@ -98,6 +98,10 @@ form {
   margin: 50px 20px 50px 20px;
 }
 
+fieldset {
+  border: none;
+}
+
 form label,
 input {
   display: block;

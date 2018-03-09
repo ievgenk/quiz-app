@@ -184,7 +184,6 @@ function evaluateAnswer() {
       .parent()
       .text()
       .trim();
-
     if (inputAnswer === dataSet[questionNumber - 1].correct) {
       incrementRightAnswers();
       $("#form").html(templateCorrectAnswer);
