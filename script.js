@@ -78,22 +78,22 @@ function incrementWrongAnswers() {
 }
 
 function templateQuestion() {
-  return `<section class="questions" aria-label="quiz question">
+  return `<section class="questions">
   <h2 class="question">${dataSet[questionNumber - 1].question}</h3>
     <label for="a1">
-      <input type="radio" name="answer-1" id="a1" required>${
+      <input type="radio" name="answer-1" id="a1" aria-label="quiz question" required>${
         dataSet[questionNumber - 1].answers[0]
       }</label>
     <label for="a2">
-      <input type="radio" name="answer-1" id="a2">${
+      <input type="radio" name="answer-1" id="a2" aria-label="quiz question">${
         dataSet[questionNumber - 1].answers[1]
       }</label>
     <label for="a3">
-      <input type="radio" name="answer-1" id="a3">${
+      <input type="radio" name="answer-1" id="a3" aria-label="quiz question">${
         dataSet[questionNumber - 1].answers[2]
       }</label>
     <label for="a4">
-      <input type="radio" name="answer-1" id="a4">${
+      <input type="radio" name="answer-1" id="a4" aria-label="quiz question">${
         dataSet[questionNumber - 1].answers[3]
       }</label>
 
