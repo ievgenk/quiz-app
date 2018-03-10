@@ -78,7 +78,7 @@ function incrementWrongAnswers() {
 }
 
 function templateQuestion() {
-  return `<fieldset role="group" aria-label="quiz-selection-option"><legend></legend><section class="questions">
+  return `<fieldset role="group" aria-label="quiz-selection-option"><legend>Quiz Questions</legend><section class="questions">
   <h2 class="question">${dataSet[questionNumber - 1].question}</h3>
     <label for="a1">
       <input type="radio" name="answer-1" id="a1" aria-label="quiz question"  role="group"required>${
