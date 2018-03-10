@@ -81,19 +81,19 @@ function templateQuestion() {
   return `<section class="questions">
   <h2 class="question">${dataSet[questionNumber - 1].question}</h3>
     <label for="a1">
-      <input type="radio" name="answer-1" id="a1" aria-label="quiz question" required>${
+      <input type="radio" name="answer-1" id="a1" aria-label="quiz question"  role="group"required>${
         dataSet[questionNumber - 1].answers[0]
       }</label>
     <label for="a2">
-      <input type="radio" name="answer-1" id="a2" aria-label="quiz question">${
+      <input type="radio" name="answer-1" id="a2" aria-label="quiz question" role="group">${
         dataSet[questionNumber - 1].answers[1]
       }</label>
     <label for="a3">
-      <input type="radio" name="answer-1" id="a3" aria-label="quiz question">${
+      <input type="radio" name="answer-1" id="a3" aria-label="quiz question" role="group">${
         dataSet[questionNumber - 1].answers[2]
       }</label>
     <label for="a4">
-      <input type="radio" name="answer-1" id="a4" aria-label="quiz question">${
+      <input type="radio" name="answer-1" id="a4" aria-label="quiz question" role="group">${
         dataSet[questionNumber - 1].answers[3]
       }</label>
 
